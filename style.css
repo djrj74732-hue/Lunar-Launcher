@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #111;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Фоновый Canvas */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    display: block;
+}
+
+/* Контент поверх фона */
+.container {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    padding: 60px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ===== СТИЛЬ ДЛЯ ЛОГОТИПА ===== */
+.logo-img {
+    width: 180px; /* Ширина картинки */
+    height: auto;
+    margin-bottom: 20px; /* Отступ до надписи LUNAR */
+    filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.5)); /* Свечение вокруг картинки */
+    animation: float 4s ease-in-out infinite; /* Плавное покачивание */
+}
+
+/* Анимация покачивания */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Шапка */
+.header h1 {
+    font-size: 72px;
+    font-weight: 900;
+    letter-spacing: 8px;
+    margin-bottom: 0;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+}
+
+.subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 8px;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+}
+
+/* Карточки */
+.info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 16px;
+    padding: 30px 20px;
+    backdrop-filter: blur(15px);
+    transition: transform 0.3s, background 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.card-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.card p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+}
+
+/* Кнопка скачивания */
+.download {
+    margin-bottom: 40px;
+}
+
+.download-btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    padding: 22px 70px;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s;
+}
+
+.download-btn:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 15px 55px rgba(255, 255, 255, 0.5);
+}
+
+.download-btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.version {
+    margin-top: 20px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 1px;
+}
+
+/* Футер */
+.footer {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Адаптив */
+@media (max-width: 700px) {
+    .header h1 {
+        font-size: 42px;
+        letter-spacing: 4px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        letter-spacing: 4px;
+    }
+
+    .info {
+        grid-template-columns: 1fr;
+    }
+
+    .download-btn {
+        padding: 18px 40px;
+        font-size: 15px;
+        letter-spacing: 2px;
+    }
+
+    .logo-img {
+        width: 120px; /* Картинка поменьше на телефонах */
+    }
+}
